@@ -1,8 +1,11 @@
 from pydantic import BaseModel
 
+from app.db.models import TaskStatus
+
+
 class TaskBase(BaseModel):
     title: str
-    status: str = "active"
+    status: TaskStatus = TaskStatus.active
 
 class TaskCreate(TaskBase):
     pass
